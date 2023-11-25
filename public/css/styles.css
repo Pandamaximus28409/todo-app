@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: 'Josefin Sans', sans-serif;
 }
+
 :root{
     --bg-header-mobile: url(../imagens/bg-header-mobile-light.png);
     --input-box-shadow: rgba(194, 195, 214, 0.50);
@@ -29,20 +30,24 @@ header {
     height: 12.5rem;
     padding: 3rem 1.75rem 0;
 }
+
 header div{
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 2.5rem;
 }
+
 header div h1{
     color: #fff;
     text-transform: uppercase;
 }
+
 header form {
     display: flex;
     gap: 0.5rem;
 }
+
 header form input {
     padding: 1.12rem;
     border-radius: 0.3125rem;
@@ -53,6 +58,7 @@ header form input {
     font-size: 0.75rem;
     color: var(--input-color);
 }
+
 header form button {
     padding: 0.75rem;
     border-radius: 0.3125rem;
@@ -70,7 +76,6 @@ main{
     background: var(--bg-tarefas);
     box-shadow: var(--box-shadow);
     border-radius: 0.3125rem;
-    margin-top: -1.5rem;
     margin-top: -1rem;
 }
 
@@ -90,7 +95,6 @@ main{
     display: flex;
     align-items: center;
     gap: 0.75rem;
-
     color: var(--text-color);
     font-size: 0.75rem;
 }
@@ -105,4 +109,11 @@ main{
     padding: 1rem 1.25rem;
     display: flex;
     justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--info-text-color);
+}
+
+.informacoes a{
+    text-decoration: none;
+    color: var(--info-text-color);
 }
