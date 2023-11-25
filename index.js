@@ -1,6 +1,5 @@
 const express = require("express")
 const exphbs = require("express-handlebars")
-
 const mysql = require("mysql2")
 
 const app = express()
@@ -35,9 +34,24 @@ app.post('/criar', (requisicao, resposta) => {
         resposta.redirect('/')
     })
 })
-
 app.get('/', (requisicao, resposta) => {
-    resposta.render('home')
+    const sql = 'SELECT * FROM tarefas'
+    conexao.query
+    conexao.query(sql, (erro, dados) => {
+        if (erro) {
+            return console.log(erro)
+        }
+
+        const tarefas = dados.map((dado) => {
+            return {
+                id: dado.id,
+                descricao: dado.descricao,
+                completa: dado.completa === 0 ? false : true
+            }
+        })
+
+        resposta.render('home', { tarefas })
+    })
 })
 
 const conexao = mysql.createConnection({
@@ -54,8 +68,8 @@ conexao.connect((erro) => {
     }
 
 console.log ("Estou conectado ao MySQL")
-    
-app.listen(3000, () => {
+
+    app.listen(3000, () => {
         console.log("Servidor rodando na porta 3000")
     })
 })
