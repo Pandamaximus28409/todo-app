@@ -10,6 +10,7 @@
     --bg-header-desktop: url(../imagens/bg-header-desktop-light.png);
     --input-box-shadow: rgba(194, 195, 214, 0.50);
     --placeholder-color: #9495a5;
+    --input-color: #494C6B;
     --input-bg: #fff;
     --button-color:  #494C6B;
     --button-color-hover: #393A4B;
@@ -65,6 +66,12 @@ header div div {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 2.5rem;
+}
+
+header button {
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 header div h1{
@@ -223,7 +230,7 @@ main{
         margin: 0;
         gap: 2rem;
     }
-
+    
     .informacoes {
         font-size: 0.875rem;
     }
@@ -241,7 +248,7 @@ main{
     .tarefa button:hover {
         cursor: pointer;
     }
-    
+
     .tarefa:hover button {
         visibility: initial;
     }
