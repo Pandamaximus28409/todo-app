@@ -6,6 +6,17 @@ function completarTarefa(id) {
         },
         body: JSON.stringify({ id })
     })
+    window.location.reload()
+}
+
+function descompletarTarefa(id) {
+    fetch("http://localhost:3000/descompletar", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ id })
+    })
 
     window.location.reload()
 }
@@ -17,7 +28,7 @@ function alterarTema() {
 
     if (tema) {
         let novoTema
-
+        
         if (tema == "light") {
             novoTema = "dark"
             button.innerHTML = `<img src="/imagens/sun-icon.png" alt="ícone do sol">`
