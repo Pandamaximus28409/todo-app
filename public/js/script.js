@@ -42,7 +42,7 @@ function alterarTema() {
     if (tema) {
         let novoTema
 
-        if (tema == "light") {
+        if (tema === "light") {
             novoTema = "dark"
             button.innerHTML = `<img src="/imagens/sun-icon.png" alt="ícone do sol">`
             body.classList.remove("light")
@@ -68,7 +68,7 @@ function verificarTema() {
     const button = document.querySelector(".tema-button")
 
     if (tema) {
-        if (tema == "dark") {
+        if (tema === "dark") {
             body.classList.add("dark")
             button.innerHTML = `<img src="/imagens/sun-icon.png" alt="ícone do sol">`
         } else {
