@@ -69,9 +69,14 @@ app.post('/criar', (requisicao, resposta) => {
         resposta.redirect('/')
     })
 })
+
+app.get('/ativas', (requisicao, resposta) => {
+
+})
+
 app.get('/', (requisicao, resposta) => {
     const sql = 'SELECT * FROM tarefas'
-    conexao.query
+
     conexao.query(sql, (erro, dados) => {
         if (erro) {
             return console.log(erro)
@@ -84,7 +89,7 @@ app.get('/', (requisicao, resposta) => {
                 completa: dado.completa === 0 ? false : true
             }
         })
-        
+
         const tarefasAtivas = tarefas.filter((tarefa) => {
             return tarefa.completa === false && tarefa
         })
@@ -110,7 +115,7 @@ conexao.connect((erro) => {
 
 console.log ("Estou conectado ao MySQL")
 
-    app.listen(3000, () => {
+app.listen(3000, () => {
         console.log("Servidor rodando na porta 3000")
     })
 })
